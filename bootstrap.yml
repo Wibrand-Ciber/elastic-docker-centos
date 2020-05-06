@@ -73,3 +73,24 @@
       enabled: yes
     become: yes
 
+  - name: Ansible create Elastic repo file
+    copy:
+      dest: "/etc/yum.repos.d/elastic.repo"
+      content: |
+      [elastic-7.x]
+      name=Elastic repository for 7.x packages
+      baseurl=https://artifacts.elastic.co/packages/7.x/yum
+      gpgcheck=1
+      gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+      enabled=1
+      autorefresh=1
+      type=rpm-md
+    become: yes
+
+  - name: Enable Elastic Edge repo
+    ini_file:
+      dest: /etc/yum.repos.d/elastic.repo
+      section: 'elastic-edge'
+      option: enabled
+      value: 0
+    become: yes
