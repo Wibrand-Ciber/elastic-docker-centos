@@ -9,7 +9,7 @@ services:
       - discovery.seed_hosts=es02,es03
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
+      - "ES_JAVA_OPTS=-Xms4g -Xmx4g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
       - ELASTIC_PASSWORD=${ES_PASSWORD}
     ulimits:
       memlock:
@@ -18,7 +18,7 @@ services:
       nofile:
         soft: 65536
         hard: 65536
-    mem_limit: 4g
+    mem_limit: 8g
     volumes:
       - /appdata1/es1:/usr/share/elasticsearch/data
     ports:
@@ -34,7 +34,7 @@ services:
       - discovery.seed_hosts=es01,es03
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
+      - "ES_JAVA_OPTS=-Xms4g -Xmx4g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
       - ELASTIC_PASSWORD=${ES_PASSWORD}
     ulimits:
       memlock:
@@ -43,7 +43,7 @@ services:
       nofile:
         soft: 65536
         hard: 65536
-    mem_limit: 4g
+    mem_limit: 8g
     volumes:
       - /appdata2/es2:/usr/share/elasticsearch/data
     ports:
@@ -59,7 +59,7 @@ services:
       - discovery.seed_hosts=es01,es02
       - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2g -Xmx2g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
+      - "ES_JAVA_OPTS=-Xms4g -Xmx4g -Xlog:disable -Xlog:all=warning:stderr:utctime,level,tags -Xlog:gc=debug:stderr:utctime"
       - ELASTIC_PASSWORD=${ES_PASSWORD}
     ulimits:
       memlock:
@@ -68,7 +68,7 @@ services:
       nofile:
         soft: 65536
         hard: 65536
-    mem_limit: 4g
+    mem_limit: 8g
     volumes:
       - /appdata3/es3:/usr/share/elasticsearch/data
     ports:
