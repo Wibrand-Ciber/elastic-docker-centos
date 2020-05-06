@@ -77,7 +77,7 @@ services:
       - elastic-stack
   kibana:
     image: docker.elastic.co/kibana/kibana:7.6.2
-    container_name: lab-kibana
+    container_name: kibana
     depends_on: 
         - es01
         - es02
