@@ -16,8 +16,9 @@ sudo yum -y install ansible
 #-------------------------
 # ANSIBLE INSTALL DOCKER
 #-------------------------
+export DOCKER_COMPOSE_VERSION=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/docker/compose/releases/latest | awk -F / '{print $NF}')
 export CURRENT_USER=$(whoami)
-ansible-playbook ./bootstrap.yml
+sudo ansible-playbook ./bootstrap.yml -e docker_compose_version=$DOCKER_COMPOSE_VERSION -e user=$CURRENT_USER
 
 #-------------------------
 # DEPLOY THE ELASTIC STACK

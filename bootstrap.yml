@@ -56,6 +56,19 @@
       enabled: yes
     become: yes
 
+  # install latest version of docker-compose
+  - name: Install docker-compose
+    shell: "sudo curl -L https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose"
+    tags:
+      - docker
+
+  - name: Ensure docker-compose is executable
+    file:
+      path: /usr/local/bin/docker-compose
+      owner: root
+      group: docker
+      mode: 0755
+
 #  - name: Add user vagrant to docker group
 #    user:
 #      name: vagrant
