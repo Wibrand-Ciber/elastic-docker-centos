@@ -7,5 +7,5 @@ Ansible also installs Metricbeat on the host for self monitoring on system and d
 
 Git clone the repo on your host, cd into the directory and execute:
 ```
-sudo ./quick-deply.sh
+sudo ./quick-deploy.sh
 ```
