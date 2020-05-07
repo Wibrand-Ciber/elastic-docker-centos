@@ -6,4 +6,6 @@ Docker-compose is then used to create and run a 3 node elasticsearch cluster wit
 Ansible also installs Metricbeat on the host for self monitoring on system and docker engine level.
 
 Git clone the repo on your host, cd into the directory and execute:
-    sudo ./quick-deply.sh
+```
+sudo ./quick-deply.sh
+```
