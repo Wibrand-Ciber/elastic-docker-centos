@@ -26,4 +26,9 @@ echo "Docker & docker-compose have been installed"
 #-------------------------
 # DEPLOY THE ELASTIC STACK
 #-------------------------
-docker-compose up -d --force-recreate
+sudo docker-compose up -d --force-recreate
+
+#-------------------------
+# START `METRICBEAT`
+#-------------------------
+sudo systemctl start metricbeat.service
