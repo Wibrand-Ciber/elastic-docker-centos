@@ -35,6 +35,6 @@ echo "Elastic stack has started"
 #-------------------------
 # START `METRICBEAT`
 #-------------------------
-echo "Starting metricbeat on host"
-sudo systemctl start metricbeat.service
-echo "Metricbeat started"
+#echo "Starting metricbeat on host"
+#sudo systemctl start metricbeat.service
+#echo "Metricbeat started"
