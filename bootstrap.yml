@@ -80,14 +80,14 @@
     copy:
       dest: "/etc/yum.repos.d/elastic.repo"
       content: |
-      [elastic-7.x]
-      name=Elastic repository for 7.x packages
-      baseurl=https://artifacts.elastic.co/packages/7.x/yum
-      gpgcheck=1
-      gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-      enabled=1
-      autorefresh=1
-      type=rpm-md
+        [elastic-7.x]
+        name=Elastic repository for 7.x packages
+        baseurl=https://artifacts.elastic.co/packages/7.x/yum
+        gpgcheck=1
+        gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        enabled=1
+        autorefresh=1
+        type=rpm-md
     become: yes
 
   - name: Enable elastic edge repo
