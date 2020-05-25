@@ -140,12 +140,12 @@
     tags:
       - metricbeat
 
-  - name: Make sure metricbeat service is running
-    systemd:
-      state: started
-      name: metricbeat
-    tags:
-      - metricbeat
+#  - name: Make sure metricbeat service is running
+#    systemd:
+#      state: started
+#      name: metricbeat
+#    tags:
+#      - metricbeat
 
 #  - name: Enable metricbeat
 #    command: systemctl enable metricbeat
