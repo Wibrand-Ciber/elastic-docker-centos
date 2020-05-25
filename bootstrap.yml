@@ -1,5 +1,4 @@
 ---
-# Bootstrap script for Elastic Stack
 
 - name: Bootstrap
   hosts: localhost
@@ -8,7 +7,6 @@
   become: yes
 
   tasks:
-  # make sure python is installed
   - name: Ensure python3 is installed
     yum:
       name: python3
@@ -18,7 +16,7 @@
     shell: "sysctl -w vm.max_map_count=262144"
     become: yes
 
-  - name: install docker dependency containerd.io
+  - name: Install docker dependency containerd.io
     dnf:
       name: 'https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm'
       state: present
@@ -117,7 +115,3 @@
   - name: Enable metricbeat
     command: systemctl enable metricbeat
     become: yes
-
-#    - name: Make DNS resolution work inside docker containers (centos8 specific)
-#    command: sudo systemctl disable firewalld
-#    become: yes
