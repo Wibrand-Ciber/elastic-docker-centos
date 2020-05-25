@@ -9,9 +9,9 @@
 
   tasks:
   # make sure python is installed
-  - name: Ensure python is installed
+  - name: Ensure python3 is installed
     yum:
-      name: python
+      name: python3
       state: enabled
 
   - name: Add Docker repo
