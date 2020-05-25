@@ -29,7 +29,7 @@ echo "Docker & docker-compose have been installed"
 # DEPLOY THE ELASTIC STACK
 #-------------------------
 echo "Starting elastic stack"
-sudo docker-compose up -d --force-recreate
+docker-compose up -d --force-recreate
 echo "Elastic stack has started"
 
 #-------------------------
