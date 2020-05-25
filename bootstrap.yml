@@ -14,6 +14,11 @@
       name: python3
       state: installed
 
+  - name: install docker dependency containerd.io
+    dnf:
+      name: 'https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm'
+      state: present
+
   - name: Add Docker repo
     get_url:
       url: https://download.docker.com/linux/centos/docker-ce.repo
@@ -107,3 +112,7 @@
   - name: Enable metricbeat
     command: systemctl enable metricbeat
     become: yes
+
+#    - name: Make DNS resolution work inside docker containers (centos8 specific)
+#    command: sudo systemctl disable firewalld
+#    become: yes
