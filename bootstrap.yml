@@ -12,7 +12,7 @@
   - name: Ensure python3 is installed
     yum:
       name: python3
-      state: enabled
+      state: installed
 
   - name: Add Docker repo
     get_url:
