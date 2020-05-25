@@ -1,15 +1,18 @@
 ---
 # Bootstrap script for Elastic Stack
 
-- hosts: localhost
+- name: Bootstrap
+  hosts: localhost
   connection: local
   gather_facts: no
   become: yes
 
   tasks:
   # make sure python is installed
-  - name: install python
-    raw: test -e /usr/bin/python || (yum -y install python)
+  - name: Ensure python is installed
+    yum:
+      name: python
+      state: enabled
 
   - name: Add Docker repo
     get_url:
@@ -73,7 +76,7 @@
       enabled: yes
     become: yes
 
-  - name: Ansible create Elastic repo file
+  - name: Create elastic repo file
     copy:
       dest: "/etc/yum.repos.d/elastic.repo"
       content: |
@@ -87,7 +90,7 @@
       type=rpm-md
     become: yes
 
-  - name: Enable Elastic Edge repo
+  - name: Enable elastic edge repo
     ini_file:
       dest: /etc/yum.repos.d/elastic.repo
       section: 'elastic-edge'
