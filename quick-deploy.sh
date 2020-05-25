@@ -11,7 +11,7 @@ export ES_PASSWORD=${ELASTIC_PASSWORD}
 #-------------------------
 sudo yum clean all
 sudo yum check-update
-sudo yum install ansible -y
+sudo yum install -y ansible
 echo "Ansible has been installed"
 
 #-------------------------
