@@ -22,8 +22,6 @@ export DOCKER_COMPOSE_VERSION=$(curl -Ls -o /dev/null -w %{url_effective} https:
 export CURRENT_USER=$(whoami)
 echo "Starting ansible playbook"
 sudo ansible-playbook ./bootstrap.yml -e docker_compose_version=$DOCKER_COMPOSE_VERSION -e user=$CURRENT_USER
-echo "Docker & docker-compose have been installed"
-
 
 #-------------------------
 # DEPLOY THE ELASTIC STACK
